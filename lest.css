@@ -1,3 +1,4 @@
+
 /* Общие стили */
 * {
     margin: 0;
@@ -19,23 +20,24 @@ a {
 }
 
 header {
-    display: flex;  /* Включаем flexbox */
-    justify-content: space-between;  /* Распределяем элементы по горизонтали с отступами */
-    align-items: center;  /* Выравниваем элементы по вертикали */
+    display: flex;  /* Flexbox для выравнивания */
+    justify-content: space-between;  /* Пространство между элементами */
+    align-items: center;  /* Выравнивание по вертикали */
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
     padding: 50px 20px;
-    text-align: center;
 }
 
 header h1 {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 header p {
     font-size: 1.2rem;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 header .cta {
@@ -53,19 +55,9 @@ header .cta:hover {
 }
 
 header .header-img {
-    width: 120px; /* Устанавливаем размер изображения */
+    width: 120px;
     height: auto;
     border-radius: 10px;
-}
-
-/* Дополнительные стили для изображения слева */
-header .left {
-    margin-right: 20px;
-}
-
-/* Дополнительные стили для изображения справа */
-header .right {
-    margin-left: 20px;
 }
 
 /* Основной контент */
@@ -95,7 +87,9 @@ header .right {
 }
 
 .features ul li {
-    margin-bottom: 10px;
+    display: flex;  /* Горизонтальное расположение текста и иконки */
+    align-items: center;  /* Центрируем элементы по вертикали */
+    margin-bottom: 15px;
     padding-left: 20px;
     position: relative;
 }
@@ -109,65 +103,37 @@ header .right {
     left: 0;
 }
 
-.form-section h2, .form-section p {
-    text-align: center;
-    font-size: 1.5rem;
-    font-family: 'Poppins', sans-serif;
-    color: #00796B;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+.features img {
+    width: 50px;
+    height: auto;
+    margin-right: 15px;
 }
 
-/* Уменьшение размера изображения с бабушкой */
-.image-left {
-    max-width: 60%;  /* Уменьшаем изображение до 60% от ширины контейнера */
-    height: 300px;
-    display: block;
-    margin: 0 auto;
+/* Секция "Как это работает?" */
+.image-container {
+    display: flex;  /* Flexbox для расположения изображений в одну линию */
+    justify-content: center;  /* Центровка по горизонтали */
+    align-items: center;  /* Центровка по вертикали */
+    gap: 20px;  /* Расстояние между изображениями */
 }
-.image-right {
-    max-width: 60%;  /* Уменьшаем изображение до 60% от ширины контейнера */
-    height: 300px;
-    display: block;
-    margin: 0 auto;
+
+.image-container img {
+    max-width: 30%;  /* Уменьшаем ширину до 30% от контейнера */
+    height: auto;  /* Сохраняем пропорции */
+    border-radius: 10px;  /* Закругленные углы */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  /* Тень для изображения */
 }
+
+
 /* Секция с моделью устройства */
-.form-section {
-    background-color: #B2EBF2;  /* Добавлен фон */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Центрируем текст и изображение */
-}
-
 .form-section img {
-    width: 50%;  /* Уменьшаем изображение до 50% от ширины контейнера */
-    max-width: 300px;  /* Максимальная ширина изображения */
-    height: 400px;  /* Высота будет автоматически изменяться в зависимости от ширины */
-    margin: 20px auto;  /* Центрируем изображение */
+    width: 50%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px auto;
     display: block;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-/* Стили для раздела "Почему выбрать Умный Холод?" */
-.features img {
-    width: 50px;  /* Уменьшаем размер картинок до 50px */
-    height: auto;
-    margin-right: 15px;  /* Добавляем отступ справа, чтобы картинки не прилипали к тексту */
-}
-
-.features ul li {
-    display: flex;  /* Выравнивание картинки и текста по горизонтали */
-    align-items: center;  /* Вертикальное выравнивание по центру */
-    margin-bottom: 15px;  /* Увеличиваем отступ между пунктами */
-}
-.model-image {
-    width: 60%;  /* Устанавливаем ширину изображения 100% относительно родительского блока */
-    max-width: 400px;  /* Максимальная ширина изображения */
-    height: auto;  /* Высота будет автоматически изменяться в зависимости от ширины */
-    margin: 20px auto;  /* Центрируем изображение */
-    display: block;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Добавляем тень для изображения */
 }
 
 /* Адаптивные стили */
@@ -180,19 +146,20 @@ header .right {
         font-size: 1rem;
     }
 
-    .features h2, .form-section h2 {
-        font-size: 1.5rem;
-    }
-
     .header-img {
-        width: 80px;  /* Уменьшаем до 80px на мобильных устройствах */
+        width: 80px;
     }
 
-    .image-left {
-        max-width: 80%; /* Меньше на мобильных устройствах */
+    .image-container {
+        flex-direction: column;  /* Изображения в колонку */
+        gap: 15px;
+    }
+
+    .image-container img {
+        max-width: 80%;  /* Ширина изображений на мобильных устройствах */
     }
 
     .form-section img {
-        width: 90%; /* Меньше на мобильных устройствах */
+        width: 90%;
     }
 }
