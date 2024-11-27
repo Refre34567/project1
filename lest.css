@@ -1,0 +1,222 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #1e3c72, #2a5298) !important; /* Используем !important для фона */
+    color: #fff;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* HEADER */
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between; /* Располагаем элементы по краям */
+    align-items: center;
+    width: 100vw; /* Занимает всю ширину экрана */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+    padding: 50px 20px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+header .header-content {
+    text-align: center;
+    flex: 1; /* Это позволяет контенту занимать оставшееся пространство */
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+header .cta {
+    display: inline-block;
+    background: #28a745;
+    padding: 15px 30px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+header .cta:hover {
+    background: #218838;
+}
+
+header .header-img {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Основной контент */
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.features, .about {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.features h2, .about h2 {
+    font-size: 2.2rem; /* Увеличенный размер заголовков */
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Стили для текста */
+.features p, 
+.features ul li,
+.about p {
+    font-size: 2rem; /* Увеличенный шрифт для текста */
+    line-height: 1.8;
+}
+
+.features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.features ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 2rem;
+    line-height: 1.6;
+}
+
+.features ul li img {
+    width: 60px;
+    height: auto;
+    margin-right: 15px;
+}
+
+/* Секция "Как это работает?" */
+.about {
+    max-width: 800px; /* Исходная ширина для мобильных */
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about p {
+    font-size: 2rem; /* Увеличенный шрифт для текста */
+    line-height: 1.8; /* Увеличение межстрочного интервала */
+    margin-bottom: 20px;
+    text-align: center;
+}
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.image-container img {
+    max-width: 30%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Секция с моделью устройства */
+.form-section img {
+    width: 50%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 1024px) {
+    .about p {
+        font-size: 2rem !important; /* Увеличиваем размер шрифта для ПК-версии с использованием !important */
+        max-width: 1100px; /* Увеличиваем максимальную ширину текста для ПК */
+        margin: 0 auto; /* Выравнивание по центру */
+    }
+
+    .about {
+        padding: 50px 60px; /* Увеличиваем отступы для секции на ПК */
+        max-width: 1400px; /* Увеличиваем максимальную ширину секции для ПК */
+    }
+
+    .about h2 {
+        font-size: 2.5rem; /* Увеличиваем размер заголовка для ПК */
+    }
+}
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    header h2 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    .header-img {
+        width: 80px;
+    }
+
+    .features p, 
+    .features ul li, 
+    .about p {
+        font-size: 1.1rem; /* Уменьшение размера текста на мобильных */
+    }
+
+    .features h2,
+    .about h2 {
+        font-size: 1.8rem;
+    }
+
+    .image-container {
+        flex-direction: column; /* Изображения в колонку */
+        gap: 15px;
+    }
+
+    .image-container img {
+        max-width: 80%; /* Ширина изображений на мобильных устройствах */
+    }
+
+    .form-section img {
+        width: 90%;
+    }
+}
